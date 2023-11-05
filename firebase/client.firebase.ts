@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore/lite';
 import { getFunctions } from 'firebase/functions';
 // import { getStorage } from 'firebase/storage';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -21,6 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
-export const db = getFirestore();
+export const db = getFirestore(app);
 export const firebaseFunctions = getFunctions(app, 'europe-west1');
 // export const storage = getStorage();
